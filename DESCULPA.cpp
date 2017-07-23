@@ -19,7 +19,7 @@ int main() {
       scanf(" %d %d", &n, &d);
       // Percorremos de trás para frente, pois assim não repetimos uma mesma frase.
       for (int j = MAXN - 1; j >= 0; j--) {
-        // Se não conseguimos nenhum pedido de desculpa com tamanho j, pulamos.
+        // Se não conseguimos nenhum pedido de desculpa com uma frase de tamanho j, pulamos.
         if (pd[j] == -1) continue;
         if (j + n > c) continue;
         // Nesse caso, conseguimos um 
