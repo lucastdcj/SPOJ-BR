@@ -8,7 +8,8 @@ int main() {
     vector<string> dnas;
     for (int i = 0; i < n; i++) {
       string dna; cin >> dna;
-      // Ordena a string.
+      // Ordena a string, pois como so queremos saber os elementos
+      // da string, nao importa a ordem em que eles aparecem.
       sort(dna.begin(), dna.end());
       dnas.push_back(dna);
     }
@@ -17,7 +18,7 @@ int main() {
     int ans = 0;
     for (int i = 0, ni = 0; i < n;) {
       ans++;
-      // Pula todos DNAs iguais
+      // Pula todos DNAs iguais.
       while (ni < n && dnas[ni] == dnas[i]) ni++;
       i = ni;
     }
