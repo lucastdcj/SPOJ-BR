@@ -12,8 +12,7 @@ int v[MAXN];
 vector<pii> build_seg(int n) {
   vector<pii> segs;    
   for (int i = 0; i < n; i++) {
-    int soma = 0;
-    int j = i;
+    int soma = 0, j = i;
     for (; j < n && soma < 42; j++) soma += v[j];
     if (soma == 42) segs.push_back(pii(j - 1, i));
   }
@@ -24,13 +23,14 @@ vector<pii> build_seg(int n) {
 vector<pii> build_seg_2p(int n) {
   vector<pii> segs;
   int soma = 0;
-  // ni vai guardar a ultima posicao tal que v[i] + v[i + 1] + ... + v[ni] < 42
+  // ni vai guardar a primeira posicao tal que v[i] + v[i + 1] + ... + v[ni] >= 42
   for (int i = 0, ni = 0; i < n; i++) {
     while (ni < n && soma + v[ni] < 42) {
       soma += v[ni];
       ni++;
     }
     if (ni < n && soma + v[ni] == 42) segs.push_back(pii(ni, i));
+    // Passa para o proximo, entao subtrai v[i].
     soma -= v[i];
   }
   return segs;
