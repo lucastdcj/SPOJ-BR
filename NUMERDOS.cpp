@@ -28,6 +28,8 @@ bool cmp_autor(const Autor& a, const Autor& b) {
   return a.nome_completo < b.nome_completo;  
 }
 
+// Recebe uma string e divide em varias substrings delimitadas por ','.
+// Por exemplo: a, b, cde vai retornar um vetor de string {a, b, cde}  
 vector<string> split(const string &s, char delim = ',') {
   stringstream ss(s);
   string item;  
