@@ -7,7 +7,6 @@ using namespace std;
 int pd[MAXN];
 
 int f91(int x) {
-  // usando o & passa
   int& ans = pd[x];
   if (ans != -1) return ans;
   
