@@ -15,10 +15,6 @@ int main() {
       while (pos < m && v[pos] - v[i] + 1 <= n) pos++;
       ans = min(ans, n - ((pos - 1) - i + 1));
     }
-    for (int i = m - 1, pos = i; i >= 0; i--) {
-      while (pos >= 0 && v[i] - v[pos] + 1 <= n) pos--;
-      ans = min(ans, n - (i - (pos + 1) + 1));
-    }
     printf("%d\n", ans);
   }
   return 0;
